@@ -3,6 +3,9 @@ from django.db import models
 
 
 class User(AbstractUser):
+
+    """User additional class extends AbstractUser"""
+
     MALE = 'male'
     FEMALE = 'female'
     OTHER = 'other'
@@ -36,3 +39,4 @@ class User(AbstractUser):
 
     language = models.CharField(choices=LANG_CHOICES, max_length=2, null=True, blank=True)
     currency = models.CharField(choices=CURRENCY_CHOICES, max_length=3, null=True, blank=True)
+    superhost = models.BooleanField(default=False)
